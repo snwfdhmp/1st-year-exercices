@@ -14,6 +14,7 @@ int main(int argc, char const *argv[])
 	printf("La chaine convertie en minuscule est : '%s'\n", bonjour);
 
 	printf("Le premier mot de la chaine est : %s\n", premier(bonjour));
+	printf("Tout sauf le premier mot est : %s\n", saufpremier(bonjour));
 
 	printf("Quel mot voulez-vous rechercher ? ");
 	scanf("%s", mot);

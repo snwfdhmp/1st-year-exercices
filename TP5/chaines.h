@@ -13,6 +13,18 @@ int strpos(char * m, char *ch);
 /*Elle convertit en minuscule les caractères de la chaine pointée 
 par ch. Retourne un pointeur sur le début de cette chaine.*/
 char * strmin(char * ch);
+
+/*Elle retourne un pointeur sur une chaine contenant le 
+premier mot de la chaine pointée par ch.*/
 char* premier(char* ch);
+
+/*Elle retourne un pointeur sur une chaine contenant tout sauf
+le premier mot de la chaine pointée par ch.*/
+char *saufpremier(char * ch);
+
+/*Elle retourne un pointeur sur une nouvelle chaine construite en prenant 
+tous les mots de la chaine pointée par ch1, suivis d'un espace et de tous
+les mots de la chaine pointée par ch2 dans la limite des 80 caractères.*/
+char *phrase (char * ch1, char * ch2) ;
 
 #endif

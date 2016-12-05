@@ -70,4 +70,14 @@ char* premier(char* ch) {
 	}
 	return premier;
 }
-
+char* saufpremier(char* ch) {
+	int i,j;
+	char saufpremier[80];
+	for (i = 0; i < StringLength(ch) && ch[i] != ' '; ++i)
+	{
+	}
+	for (j=0; i+j < StringLength(ch); j++) {
+		saufpremier[j] = ch[i+j];
+	}
+	return saufpremier;
+}
