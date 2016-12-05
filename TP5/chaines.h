@@ -25,6 +25,6 @@ char *saufpremier(char * ch);
 /*Elle retourne un pointeur sur une nouvelle chaine construite en prenant 
 tous les mots de la chaine pointée par ch1, suivis d'un espace et de tous
 les mots de la chaine pointée par ch2 dans la limite des 80 caractères.*/
-char *phrase (char * ch1, char * ch2) ;
+char *phrase (char * ch1, char * ch2);
 
 #endif

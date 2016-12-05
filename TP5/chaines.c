@@ -32,6 +32,7 @@ char *lire (char * ch){
 			}
 		}
 	}
+
 	return ch;
 }
 
@@ -70,6 +71,7 @@ char* premier(char* ch) {
 	}
 	return premier;
 }
+
 char* saufpremier(char* ch) {
 	int i,j;
 	char saufpremier[80];
@@ -80,4 +82,30 @@ char* saufpremier(char* ch) {
 		saufpremier[j] = ch[i+j];
 	}
 	return saufpremier;
+}
+
+char *phrase (char * ch1, char * ch2) {
+	char ch3[80];
+	int taille1 = StringLength(ch1);
+	int taille2 = StringLength(ch2);
+	//printf("Les chaines a concatener sont '%s' et '%s'\n", ch1, ch2);
+	int i,j;
+	if(taille1+taille2 >= 80) {
+		//printf("[ATTENTION] La taille de la jonction des deux chaines dépasse 80 caractères ...\nLa deuxième chaine sera coupée.\n");
+	}
+	for (i = 0; i < taille1; ++i)
+	{
+		//printf("ch3[%d] = %c\n",i, ch1[i]);
+		ch3[i] = ch1[i];
+	}
+	//printf("FIN de la premiere chaine, i = %d\n", i);
+	ch3[i] = ' ';
+	i+=1;
+	for (j=0; (j < taille2-0) && (i+j < 80); j++) {
+		//printf("ch3[%d] = %c\n",i+j, ch2[j]);
+		ch3[i+j] = ch2[j];
+	}
+
+	//printf("ch3 = %s\n", ch3);
+	return ch3;
 }
