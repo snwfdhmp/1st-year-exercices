@@ -4,6 +4,7 @@
 #include "chaines_tp3.h"
 
 #define VIDE(a) strlen(a)==0
+#define EGAL(a, b) strcmp(a,b)==0
 
 int main(int argc, char const *argv[])
 {
@@ -31,14 +32,27 @@ int main(int argc, char const *argv[])
 	printf("La chaine convertie en minuscule est : '%s'\n", hello);
 	printf("La phrase formée par les deux chaines est :\n%s\n", phrase(bonjour, hello));*/
 
-	//BLOC TEST PREPROCESSEUR
+	//BLOC TEST PREPROCESSEUR FONCTION VIDE
 
-	printf("Entrez une chaine : ");
+	/*printf("Entrez une chaine : ");
 	gets(bonjour);
 	if(VIDE(bonjour))
 		printf("La chaine est vide.\n");
 	else
-		printf("La chaine n'est pas vide.\n");
+		printf("La chaine n'est pas vide.\n");*/
+
+	//BLOC TEST FONCTION PREPROCESSEUR EGAL
+
+	printf("Entrez une chaine : ");
+	gets(bonjour);
+	printf("Entrez une autre chaine : ");
+	gets(hello);
+	if(EGAL(bonjour, hello))
+		printf("Les deux chaines sont identiques.\n");
+	else
+		printf("Les deux chaines sont différentes.\n");
+
+
 
 	//BLOC RECHERCHE DE MOT
 
