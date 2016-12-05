@@ -1,5 +1,5 @@
-#include <chaines.h>
-#include <TP4-MONGA.c>
+#include "chaines.h"
+#include "chaines_tp3.h"
 
 
 
@@ -7,7 +7,7 @@ char *lire (char * ch){
 	int i;
 	fflush(stdin);
 	gets(ch);
-	unsigned int taille = StringLenght(ch);
+	unsigned int taille = StringLength(ch);
 	for (i = 0; i < taille; ++i)
 	{
 		if(ch[i] == ' ') {

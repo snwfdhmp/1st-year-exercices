@@ -18,7 +18,7 @@ while (dest[i]=src[i]) i++;
 }
 
 /***************************************************************************/
-/* NOM FONCTION : StringLenght					   */
+/* NOM FONCTION : StringLength					   */
 /* DESCRIPTION : calcule la longueur de la chaine passee en parametres     */
 /* Retourne : int (valeur de la longueur)				   */
 /* Effets de bords : 			                                   */
@@ -26,7 +26,7 @@ while (dest[i]=src[i]) i++;
 /* Paramètres en sortie :      			                           */
 /***************************************************************************/
 
-int StringLenght(const char *ch)
+int StringLength(const char *ch)
 {
 	int i=0;
 	while (ch[i] != '\0')
@@ -107,10 +107,10 @@ char* StringNConcat(char* dest, const char * src, int n)
 	int j = 0;
 	int l;
 	char *concat;
-	l = n-StringLenght(src);
-	printf("%d\n",StringLenght(src));
+	l = n-StringLength(src);
+	printf("%d\n",StringLength(src));
 	
-	if (n > StringLenght(src))
+	if (n > StringLength(src))
 	{
   		while (n > l)
  		{
