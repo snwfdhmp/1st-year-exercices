@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "chaines.h"
 #include "chaines_tp3.h"
+
+#define VIDE(a) strlen(a)==0
 
 
 char *decaler(char* ch, int indexDebut, int indexFin) {

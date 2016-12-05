@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 #include "chaines.h"
 #include "chaines_tp3.h"
+
+#define VIDE(a) strlen(a)==0
 
 int main(int argc, char const *argv[])
 {
@@ -8,6 +11,8 @@ int main(int argc, char const *argv[])
 	char hello[80];
 	char mot[80];
 
+	//BLOC TEST DES FONCTIONS PRINCIPALES
+	/*
 	printf("Entrez une premiere chaine : ");
 	lire(bonjour);
 
@@ -24,7 +29,18 @@ int main(int argc, char const *argv[])
 	printf("La chaine entrée est : '%s'\n", hello);
 	strmin(hello);
 	printf("La chaine convertie en minuscule est : '%s'\n", hello);
-	printf("La phrase formée par les deux chaines est :\n%s\n", phrase(bonjour, hello));
+	printf("La phrase formée par les deux chaines est :\n%s\n", phrase(bonjour, hello));*/
+
+	//BLOC TEST PREPROCESSEUR
+
+	printf("Entrez une chaine : ");
+	gets(bonjour);
+	if(VIDE(bonjour))
+		printf("La chaine est vide.\n");
+	else
+		printf("La chaine n'est pas vide.\n");
+
+	//BLOC RECHERCHE DE MOT
 
 	/*printf("Quel mot voulez-vous rechercher ? ");
 	scanf("%s", mot);
