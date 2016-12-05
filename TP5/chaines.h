@@ -13,5 +13,6 @@ int strpos(char * m, char *ch);
 /*Elle convertit en minuscule les caractères de la chaine pointée 
 par ch. Retourne un pointeur sur le début de cette chaine.*/
 char * strmin(char * ch);
+char* premier(char* ch);
 
 #endif

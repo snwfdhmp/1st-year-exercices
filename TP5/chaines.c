@@ -61,3 +61,13 @@ char * strmin(char * ch){
 	return ch;
 }
 
+char* premier(char* ch) {
+	int i;
+	char premier[80];
+	for (i = 0; i < StringLength(ch) && ch[i] != ' '; ++i)
+	{
+		premier[i] = ch[i];
+	}
+	return premier;
+}
+

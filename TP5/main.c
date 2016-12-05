@@ -13,6 +13,8 @@ int main(int argc, char const *argv[])
 	strmin(bonjour);
 	printf("La chaine convertie en minuscule est : '%s'\n", bonjour);
 
+	printf("Le premier mot de la chaine est : %s\n", premier(bonjour));
+
 	printf("Quel mot voulez-vous rechercher ? ");
 	scanf("%s", mot);
 	int pos = strpos(mot, bonjour);
