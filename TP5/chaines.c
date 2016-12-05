@@ -126,7 +126,7 @@ char * dernier(char * ch) {
 	indexDernierEspace++;
 	for (i = 0; indexDernierEspace+i < taille; ++i)
 	{
-		printf("dernier[%d] = %c  (ch[%d])\n", i, ch[indexDernierEspace+i], indexDernierEspace+i);
+		//printf("dernier[%d] = %c  (ch[%d])\n", i, ch[indexDernierEspace+i], indexDernierEspace+i);
 		dernier[i] = ch[indexDernierEspace+i];
 	}
 	dernier[i] = '\0';
@@ -146,5 +146,6 @@ char * saufdernier(char * ch) {
 	for(i=0; i < indexDernierEspace; i++) {
 		saufdernier[i] = ch[i];
 	}
+	saufdernier[i] = '\0';
 	return saufdernier;
 }
