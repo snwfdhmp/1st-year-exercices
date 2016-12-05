@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "chaines_tp3.h"
 
 /***************************************************************************/
@@ -11,10 +12,11 @@
 
 char* StringCopy(char* dest, const char* src)
 {
-int i=0;
-while (dest[i]=src[i]) i++;
+	int i=0;
+	for (i = 0; i<StringLength(src); ++i)
+		dest[i]=src[i];
  
-  return dest;
+  	return dest;
 }
 
 /***************************************************************************/
@@ -32,7 +34,7 @@ int StringLength(const char *ch)
 	while (ch[i] != '\0')
 		i++;
   
-  return i;
+  	return i;
 }
 
 
@@ -162,7 +164,7 @@ int StringCompare(const char* ch1, const char * ch2)
 	while(ch1[i])
 	{
 		if (ch1[i] != ch2[i])
-			comp ==0;
+			comp=0;
 		else i++;
 	}
   
