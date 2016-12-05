@@ -37,8 +37,16 @@ char *lire (char * ch){
 
 
 int strpos(char * m, char *ch){
-	
-	return 0;
+	int i,j;
+	for (i = 0; i < StringLength(ch); ++i)
+	{
+		for(j=0; ch[i+j] == m[j]; j++){
+			if(j==StringLength(m)-1) {
+				return i;
+			}
+		}
+	}
+	return -1;
 }
 
 
@@ -47,7 +55,7 @@ char * strmin(char * ch){
 	unsigned int taille = StringLength(ch);
 
 	for (i = 0; i < taille; ++i) {
-		if(ch[i] >= 65 && ch[i] <= 97)
+		if(ch[i] >= 65 && ch[i] < 97)
 			ch[i] += 32;
 	}
 	return ch;
