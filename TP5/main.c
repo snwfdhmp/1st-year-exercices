@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 	char mot[80];
 
 	//BLOC TEST DES FONCTIONS PRINCIPALES
-	/*
+	
 	printf("Entrez une premiere chaine : ");
 	lire(bonjour);
 
@@ -23,8 +23,10 @@ int main(int argc, char const *argv[])
 
 	printf("Le premier mot de la chaine est : %s\n", premier(bonjour));
 	printf("Tout sauf le premier mot est : %s\n", saufpremier(bonjour));
+	printf("Le dernier mot est : %s\n", dernier(bonjour));
+	printf("Tout sauf le dernier mot est : %s\n", saufdernier(bonjour));
 
-	printf("Rentrez une seconde chaine : ");
+	/*printf("Rentrez une seconde chaine : ");
 	lire(hello);
 
 	printf("La chaine entrée est : '%s'\n", hello);
@@ -43,14 +45,14 @@ int main(int argc, char const *argv[])
 
 	//BLOC TEST FONCTION PREPROCESSEUR EGAL
 
-	printf("Entrez une chaine : ");
+	/*printf("Entrez une chaine : ");
 	gets(bonjour);
 	printf("Entrez une autre chaine : ");
 	gets(hello);
 	if(EGAL(bonjour, hello))
 		printf("Les deux chaines sont identiques.\n");
 	else
-		printf("Les deux chaines sont différentes.\n");
+		printf("Les deux chaines sont différentes.\n");*/
 
 
 

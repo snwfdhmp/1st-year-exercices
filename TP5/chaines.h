@@ -27,4 +27,8 @@ tous les mots de la chaine pointée par ch1, suivis d'un espace et de tous
 les mots de la chaine pointée par ch2 dans la limite des 80 caractères.*/
 char *phrase (char * ch1, char * ch2);
 
+/*Elle retourne un pointeur sur une chaine contenant le dernier mot de la 
+chaine pointée par ch.*/
+char * dernier(char * ch);
+
 #endif

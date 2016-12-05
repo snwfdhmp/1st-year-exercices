@@ -112,3 +112,39 @@ char *phrase (char * ch1, char * ch2) {
 	//printf("ch3 = %s\n", ch3);
 	return ch3;
 }
+
+char * dernier(char * ch) {
+	char dernier[80];
+	int i,j,indexDernierEspace = 0;
+	int taille = StringLength(ch);
+	for (i = 0; i < taille; ++i)
+	{
+		if(ch[i] == ' ') {
+			indexDernierEspace = i;
+		}
+	}
+	indexDernierEspace++;
+	for (i = 0; indexDernierEspace+i < taille; ++i)
+	{
+		printf("dernier[%d] = %c  (ch[%d])\n", i, ch[indexDernierEspace+i], indexDernierEspace+i);
+		dernier[i] = ch[indexDernierEspace+i];
+	}
+	dernier[i] = '\0';
+	return dernier;
+}
+
+char * saufdernier(char * ch) {
+	char saufdernier[80];
+	int i,j,indexDernierEspace = 0;
+	int taille = StringLength(ch);
+	for (i = 0; i < taille; ++i)
+	{
+		if(ch[i] == ' ') {
+			indexDernierEspace = i;
+		}
+	}
+	for(i=0; i < indexDernierEspace; i++) {
+		saufdernier[i] = ch[i];
+	}
+	return saufdernier;
+}
