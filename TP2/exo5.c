@@ -18,6 +18,7 @@ int getNbrComposantes(){
 	}while(nbrComposantes > MAX_COMPOSANTES || nbrComposantes <= 0);
 	return nbrComposantes;
 }
+
 void initTableau(float* tableau, int tailleTableau) {
 	unsigned short int i = 0;
 	for(i=0; i<tailleTableau; i++) {
@@ -59,6 +60,7 @@ void lookForNull(float* tableau, int tailleTableau) {
 		}
 	}
 }
+
 int searchForElement(float* tableau, int tailleTableau) {
 	float el = 0;
 	unsigned short int i = 0;
@@ -97,30 +99,24 @@ int searchForElement(float* tableau, int tailleTableau) {
 }*/
 void triSelect(float* tableau, int tailleTableau) { //Ne marche pas encore
 	int i = 0;
-	int jusquou = tailleTableau-1;
+	int reste = tailleTableau;
 	int biggestIndex = 0;
-	float tmp;
-	while(jusquou > 0) {
-		while(i <= jusquou) {
-			if(tableau[i] > tableau[biggestIndex]) {
-				printf("%f est plus grand que %f\n", tableau[i], tableau[biggestIndex]);
+	float nouveauTableau[tailleTableau];
+	initTableau(nouveauTableau, tailleTableau);
+	while (reste > 0) {
+		for (i = 0; i < reste; ++i)
+		{
+			if(tableau[biggestIndex] < tableau[i]) {
 				biggestIndex = i;
 			}
-			i++;
 		}
-		i--;
-		printf("Sortie de boucle i : i = %d, jusquou = %d, biggest = %f\n", i, jusquou, tableau[biggestIndex]);
-		printf("Permutation : stockage tmp <- %f\n", tableau[biggestIndex]);
-		tmp = tableau[biggestIndex];
-		printf("Permutation : stockage tab[bigg] <- %f\n", tableau[i]);
-		tableau[biggestIndex] = tableau[i];
-		printf("Permutation : stockage tab[i] <- %f\n", tmp);
-		tableau[i] = tmp;
-		afficherTableau(tableau, tailleTableau);
-		jusquou--;
-		i=0;
-		printf("Recommence boucle while avec jusqou = %d\n", jusquou);
+		float tmp = tableau[reste-1];
+		tableau[reste-1] = tableau[biggestIndex];
+		tableau[biggestIndex] = tmp;
+		biggestIndex = 0;
+		reste--;
 	}
+
 	afficherTableau(tableau, tailleTableau);
 }
 
@@ -134,6 +130,12 @@ int main(int argc, char const *argv[])
 	//TRAITEMENT
 	nbrComposantes = getNbrComposantes();
 	float composantes[MAX_COMPOSANTES+1]; //possible de mettre composantes[nbrComposantes]
+
+	/* Pour cet exercice, nous avons utilisé une autre façon de procéder que celle des menus.
+		Cette approche de l'éxécution par étape est intéressante car elle permet de comprendre exactement
+		ce que fait le programme et dans quel ordre.
+		Pour voir comment j'ai effectué le menu de navigation, se référer aux autres exercices.
+	*/
 
 	for(etape = 1; etape <= NBR_ETAPES; etape++) {
 		switch(etape) {
@@ -157,5 +159,39 @@ int main(int argc, char const *argv[])
 			break;
 		}
 	}
+
+	/* Voici tout de même le menu, au cas où vous auriez besoin de vérifier le bon fonctionnement du programme avec
+	 le menu.
+	 Il est nécéssaire de commenter la boucle for située au dessus */
+	/* for(etape = 1; etape <= NBR_ETAPES; etape++) {
+		printf("Que faire :\n1:Initialiser à 0\n2:Changer valeurs\n3:Afficher Tableau\n4:Chercher une valeur nulle\n5:Rechercher un élément\n6:Tri sélection\n%d:Quitter\nChoix : ", NBR_ETAPES+1);
+		scanf("%d", &etape);
+		switch(etape) {
+			case 1:
+				initTableau(composantes, nbrComposantes);
+			break;
+			case 2:
+				setTableau(composantes, nbrComposantes);
+			break;
+			case 3:
+				afficherTableau(composantes, nbrComposantes);
+			break;
+			case 4:
+				lookForNull(composantes, nbrComposantes);
+			break;
+			case 5:
+				searchForElement(composantes, nbrComposantes);
+			break;
+			case 6:
+				triBulle(composantes, nbrComposantes);
+			break;
+			case NBR_ETAPES+1:
+			break;
+			default:
+				printf("Entrez un choix valide.\n");
+			break;
+		}
+	} */
+
 	return 0;
 }

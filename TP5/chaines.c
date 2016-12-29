@@ -149,3 +149,25 @@ char * saufdernier(char * ch) {
 	saufdernier[i] = '\0';
 	return saufdernier;
 }
+char* miroir(char * chaine) {
+	char inverse[80];
+	char tmp[80];
+	//char dernier[80];
+	int i;
+	for(i = 0;i < StringLength(chaine);i++) {
+		tmp[i] = chaine[i];
+	}
+	/*for(i = 0;i < StringLength(dernier(tmp));i++) {
+		dernier[i] = dernier(tmp)[i];
+	}*/
+
+
+	while(!(VIDE(tmp))) {
+		char dernier[] = dernier(tmp);
+		for (i = 0; i < StringLength(dernier); ++i)
+		{
+			inverse[i] = dernier[i];
+		}
+		tmp[strpos(dernier, tmp)] = '\0';	
+	}
+}

@@ -31,6 +31,13 @@ char* phrase (char* ch1, char* ch2);
 chaine pointée par ch.*/
 char* dernier(char* ch);
 
+/*Elle retourne un pointeur sur une chaine contenant tout sauf le dernier
+mot de la chaine pointée par ch.*/
 char* saufdernier(char* ch);
+
+/*Elle retourne un pointeur sur une chaine contenant tous les mots de
+la chaine pointée par ch, pris dans l'ordre inverse.
+Exemple : miroir(''ceci est un exemple'') → ''exemple un est ceci''*/
+char * miroir(char * chaine) ;
 
 #endif
