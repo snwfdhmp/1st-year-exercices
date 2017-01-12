@@ -1,0 +1,1 @@
+Pour l'exo 1, j'ai donné une deuxième version qui est plus conscise et gère le maximum de cas.

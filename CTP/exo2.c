@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <math.h>
+
 // vous devez ecrire les sous programmes
 //perimetre (case 1)
 //valeurMini (case 2)
@@ -42,38 +44,24 @@ int valeurMini(T_Carre monCarre, int taille) {
 	return x;
 }
 
-
-void sortArray(int* tab) { //Trie du plus petit au plus grand
-	int i,n,b=1;
-	while(b)
-	{
-		b=0;
-		for(i=0; i<TAILLE; i++) {
-			/*while((int) difftime(now, start) %5 != 4)
-				time(&now);*/
-			if(tab[i] > tab[i+1]) {
-				n = tab[i];
-				tab[i] = tab[i+1];
-				tab[i+1] = n;
-				b=1;
-			}
-		}
-	}
-}
-
 int NiemevaleurMini(T_Carre monCarre, int taille, int N, int* x, int* y) {
-	unsigned int i, j;
-	int sorted[(TAILLE*TAILLE)];
-	for (i = 0; i < taille; ++i)
-	{
-		for (j = 0; j < taille; ++j)
-		{
-			sorted[i*TAILLE+j] = monCarre[i][j];
-		}
-	}
-	sortArray(sorted);
-
-	return sorted[N];
+	unsigned int previous = 0, min, i, j, k;
+ 
+    for(k=0; k<N; k++)
+    {
+        min = monCarre[0][0];
+        for(i=0; i<taille; i++)
+            for(j=0; j<taille; j++)
+                if(min > monCarre[i][j] && monCarre[i][j] > previous)
+                {
+                    min = monCarre[i][j];
+                    *x = i+1;
+                    *y = j+1;
+                }
+        previous = min;
+    }
+ 
+    return min;
 }
 
 /************************     MENU     *******************************/
@@ -110,6 +98,27 @@ void afficherCarre(T_Carre T,int t)
 
 }
 
+void transforme(T_Carre monCarre, int taille)
+{
+    unsigned int i, j, x, y;
+ 
+    for(i=1; i<taille-1; i++)
+        for(j=1; j<taille-1; j++)
+        {
+            NiemevaleurMini(monCarre, taille, (i-1)*(taille-2)+j, &x, &y);
+            swap(monCarre, i, j, x, y);
+        }
+}
+
+
+void swap(T_Carre monCarre, int x1, int y1, int x2, int y2)
+{
+    int t;
+ 
+    t = monCarre[x1][y1];
+    monCarre[x1][y1] = monCarre[x2][y2];
+    monCarre[x2][y2] = t;
+}
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////  MAIN /////////////////
 ///////////////////////////////////////////////////////////////////////////////////
@@ -146,7 +155,7 @@ int main()
                 printf("\n\n ----> Cette valeur est en position %d--%d\n\n",x,y);
                 break;
                 case 4 :
-                //transforme(monCarre,taille);
+                transforme(monCarre,taille);
 
                 /*
                 la fonction transforme doit rechercher les (taille-2)^2 plus
