@@ -25,9 +25,8 @@ void saisir_texte(char *chaine_a_saisir, int longueur) {
 
 	} while(strlen(str) != longueur || boolInvalide);
 
-
-
-	strcpy(chaine_a_saisir, str);
+	for (i = 0; i < longueur; ++i)
+		chaine_a_saisir[i] = str[i];
 }
 
 char* encode_texte(char* chaine_a_encoder, int longueur){

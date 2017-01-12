@@ -54,9 +54,7 @@ char* StringNCopy(char *dest, const char* src, int n)
  int i=0;
 
  for (i =0; i < n; i++)
- {
  	 (dest[i]=src[i]);
- }
 
 return dest;
 }
@@ -73,8 +71,7 @@ return dest;
 char* StringConcat(char* dest, const char * src)
 {
 	char *concat;
-	int i=0;
-	int	j=0;
+	int i=0,j=0;
 
  		while (src[i])
  		{
@@ -83,13 +80,11 @@ char* StringConcat(char* dest, const char * src)
  		}
  		while (dest[j])
  		{
- 			concat[i] = dest[j];
+ 			concat[i+j] = dest[j];
  			j++;
- 			i++;
  		}
 
- 		dest = concat;
-return dest;
+return concat;
 
 }
 
@@ -105,9 +100,7 @@ return dest;
 
 char* StringNConcat(char* dest, const char * src, int n)
 {
-	int i =0;
-	int j = 0;
-	int l;
+	int i = 0, j = 0, l;
 	char *concat;
 	l = n-StringLength(src);
 	printf("%d\n",StringLength(src));
@@ -136,9 +129,7 @@ char* StringNConcat(char* dest, const char * src, int n)
  	else 
  	{
  		for (i = 0; i < n; ++i)
- 		{
  			concat[i] = src[i];
- 		}
  	}
 
  	dest[i] = '\0';
@@ -159,8 +150,7 @@ char* StringNConcat(char* dest, const char * src, int n)
 
 int StringCompare(const char* ch1, const char * ch2)
 {
-	int i;
-	int comp = 1;
+	int i, comp = 1;
 	while(ch1[i])
 	{
 		if (ch1[i] != ch2[i])
